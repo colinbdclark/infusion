@@ -102,7 +102,7 @@ TROUBLESHOOTING UPLOADER AND FLASH:
   3. In the Flash Settings panel, click "Edit locations..."
   4. Select "Add location..."
   5. Click "Browse for folder..."
-  6. Select the local /src/webapp/lib/swfupload/flash/ directory that contains the swfupload.swf file
+  6. Select the local /src/lib/swfupload/flash/ directory that contains the swfupload.swf file
   7. Restart your browser
 
   You should be good to go! 

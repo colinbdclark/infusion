@@ -3915,10 +3915,10 @@ https://source.fluidproject.org/svn/sandbox/tabindex/trunk/LICENSE.txt
  and GPL (GPL-LICENSE.txt) licenses.
 
  You may obtain a copy of the GPL License at 
- https://source.fluidproject.org/svn/fluid/components/trunk/src/webapp/fluid-components/js/jquery/GPL-LICENSE.txt
+ https://source.fluidproject.org/svn/fluid/components/trunk/src/fluid-components/js/jquery/GPL-LICENSE.txt
 
  You may obtain a copy of the MIT License at 
- https://source.fluidproject.org/svn/fluid/components/trunk/src/webapp/fluid-components/js/jquery/MIT-LICENSE.txt
+ https://source.fluidproject.org/svn/fluid/components/trunk/src/fluid-components/js/jquery/MIT-LICENSE.txt
 ***/
 
 /******************************
