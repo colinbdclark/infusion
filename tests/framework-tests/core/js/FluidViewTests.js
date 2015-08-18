@@ -23,6 +23,23 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
 
         jqUnit.module("Fluid View Tests");
 
+        jqUnit.test("fluid.bind", function () {
+            jqUnit.expect(3);
+            var expectedText = "New Text";
+            var jqElm = $("<div></div>");
+            var testObj = {
+                baseVal: 3,
+                fn: function (a, b) {
+                    return this.baseVal + a + b;
+                }
+            };
+
+            fluid.bind(jqElm, "text", expectedText);
+            jqUnit.assertEquals("The text should have been set", expectedText, jqElm.text());
+            jqUnit.assertEquals("The value returned from the bind should be the same as the native call", jqElm.text(), fluid.bind(jqElm, "text"));
+            jqUnit.assertEquals("The correct value should be returned", 6, fluid.bind(testObj, "fn", [1, 2]));
+        });
+
         jqUnit.test("jById id not found", function () {
             var invalidIdElement = fluid.jById("this-id-does-not-exitst");
             jqUnit.assertEquals("element not found", 0, invalidIdElement.length);
@@ -48,7 +65,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
             // Give it a valid id selector.
             var result = fluid.container("#main-container");
             jqUnit.assertTrue("One element should be returned when specifying a selector", 1, result.length);
-            
+
             jqUnit.expectFrameworkDiagnostic("Selector matching two elements for container", function () {
                 result = fluid.container(".container");
             }, "container");
@@ -114,7 +131,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
             var elementWithId = $("#element-with-id");
             var returnWithId = fluid.allocateSimpleId(elementWithId);
             jqUnit.assertDeepEq("Calling allocateSimpleId on element with id leaves id unchanged", ["element-with-id", "element-with-id"], [returnWithId, elementWithId.prop("id")]);
-            
+
             var elementWithoutId = $(".element-without-id");
             var fluidId = fluid.allocateSimpleId(elementWithoutId);
 
